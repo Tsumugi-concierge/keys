@@ -6,7 +6,6 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Feliz Stay 1001 — 鍵のご案内</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --accent: #c17b7b;
@@ -15,20 +14,43 @@
     --text-dark: #3a3232;
     --text-mid: #6b5a5a;
     --green: #5a8a6a;
-    --green-light: #e6f3ea;
     --blue: #4a7ab5;
-    --blue-light: #e6eef8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); min-height: 100vh; }
   .top-bar {
-    background: linear-gradient(135deg, var(--accent) 0%, #9b5a5a 100%);
-    padding: 18px 20px 16px;
+    background: linear-gradient(135deg, #c17b7b 0%, #9b5a5a 100%);
+    padding: 18px 20px 8px;
     text-align: center;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   }
   .top-bar .sub { font-size: 0.8rem; color: rgba(255,255,255,0.8); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-  .top-bar h1 { font-family: 'Pacifico', cursive; font-size: 1.6rem; color: #fff; text-shadow: 1px 2px 4px rgba(0,0,0,0.2); }
+  .top-bar h1 { font-family: 'Pacifico', cursive; font-size: 1.6rem; color: #fff; text-shadow: 1px 2px 4px rgba(0,0,0,0.2); margin-bottom: 10px; }
+  .lang-bar {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px 12px;
+    background: linear-gradient(135deg, #c17b7b 0%, #9b5a5a 100%);
+    flex-wrap: wrap;
+  }
+  .lang-btn {
+    background: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.15s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: rgba(255,255,255,0.55);
+    color: var(--text-dark);
+    border-color: rgba(255,255,255,0.7);
+  }
   .content { padding: 20px 16px 48px; max-width: 560px; margin: 0 auto; }
   .photo-block { margin-bottom: 24px; }
   .photo-block img { width: 100%; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: block; }
@@ -104,49 +126,139 @@
   .wifi-pass { color: var(--green); }
   .addr-text { font-size: 0.97rem; font-weight: 700; line-height: 1.7; color: var(--text-dark); }
   .addr-jp { color: var(--text-mid); font-size: 0.85rem; margin-top: 4px; }
-  .note { background: #fff8e6; border-left: 4px solid #f0c040; padding: 12px 14px; border-radius: 0 10px 10px 0; font-size: 0.9rem; font-weight: 700; color: #7a6020; margin-top: 12px; }
   .footer { text-align: center; margin-top: 32px; font-size: 0.8rem; color: var(--text-mid); }
 </style>
-
 </head>
 <body>
 <div class="top-bar">
-  <div class="sub">🔑 Key Information</div>
+  <div class="sub" data-i18n="keyInfo">🔑 鍵のご案内</div>
   <h1>Feliz Stay 1001</h1>
 </div>
+<div class="lang-bar"><button class="lang-btn" onclick="setLang('en')">EN</button><button class="lang-btn active" onclick="setLang('ja')">日本語</button><button class="lang-btn" onclick="setLang('zh')">中文</button><button class="lang-btn" onclick="setLang('ko')">한국어</button><button class="lang-btn" onclick="setLang('fr')">FR</button><button class="lang-btn" onclick="setLang('es')">ES</button></div>
 <div class="content">
-
   <div class="card">
-    <div class="card-title"><span class="icon">🚪</span> 入室方法</div>
-    
-<ul class="step-list">
-  <li><span class="step-num">1</span><div>エントランスの<strong>オートロック</strong>の番号を入力し、<strong>「呼」</strong>ボタンを押してください。<br>
-    <span class="code-box">3986</span></div></li>
-  <li><span class="step-num">2</span><div>エントランス1階の<strong>郵便受け</strong>（1001番）のダイヤルを合わせて開けてください。<br>
-    右へ2回まわして <strong>6</strong>、左へ1回まわして <strong>3</strong> → 引いて開く</div></li>
-  <li><span class="step-num">3</span><div>郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br>
-    <span class="code-box">1501</span></div></li>
-  <li><span class="step-num">4</span><div>エレベーターで10階へ。<strong>1001号室</strong>のドアを鍵で開けてください。</div></li>
+    <div class="card-title"><span class="icon">🚪</span> <span data-i18n="entryMethod">入室方法</span></div>
+    <ul class="step-list">
+  <li><span class="step-num">1</span><div data-i18n="step1">エントランスの<strong>オートロック</strong>の番号を入力し、<strong>「呼」</strong>ボタンを押してください。<br><span class="code-box">3986</span></div></li>
+  <li><span class="step-num">2</span><div data-i18n="step2">エントランス1階の<strong>郵便受け</strong>（1001番）のダイヤルを合わせて開けてください。<br>右へ2回まわして <strong>6</strong>、左へ1回まわして <strong>3</strong> → 引いて開く</div></li>
+  <li><span class="step-num">3</span><div data-i18n="step3">郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br><span class="code-box">1501</span></div></li>
+  <li><span class="step-num">4</span><div data-i18n="step4">エレベーターで10階へ。<strong>1001号室</strong>のドアを鍵で開けてください。</div></li>
 </ul>
-    
   </div>
   <div class="card">
-    <div class="card-title"><span class="icon">📶</span> Wi-Fi</div>
+    <div class="card-title"><span class="icon">📶</span> <span data-i18n="wifi">Wi-Fi</span></div>
     <div class="info-row">
       <span class="info-label">SSID</span>
       <span class="info-val wifi-ssid">Felizstay1001</span>
     </div>
     <div class="info-row">
-      <span class="info-label">パスワード</span>
+      <span class="info-label" data-i18n="password">パスワード</span>
       <span class="info-val wifi-pass">hello.ikebukuro</span>
     </div>
   </div>
   <div class="card">
-    <div class="card-title"><span class="icon">📍</span> 住所</div>
+    <div class="card-title"><span class="icon">📍</span> <span data-i18n="address">住所</span></div>
     <div class="addr-text">Plaza Feliz Onda Building 1001, 2-65-1 Ikebukuro, Toshima-ku, Tokyo</div>
     <div class="addr-jp">〒171-0014 東京都豊島区池袋2-65-1 プラザフェリスオンダビル1001</div>
   </div>
-  <div class="footer">このページは宿泊者様専用です。URLを第三者に共有しないでください。</div>
+  <div class="footer" data-i18n="footer">このページは宿泊者様専用です。URLを第三者に共有しないでください。</div>
 </div>
+
+<script>
+const I18N = {
+  "en": {
+    "keyInfo": "🔑 Key Information",
+    "entryMethod": "🚪 Entry Method",
+    "wifi": "📶 Wi-Fi",
+    "password": "Password",
+    "address": "📍 Address",
+    "footer": "This page is for guests only. Do not share the URL with third parties.",
+    "step1": "Enter the code on the entrance <strong>auto-lock</strong> panel and press the <strong>\"Call\" (呼)</strong> button.<br><span class=\"code-box\">3986</span>",
+    "step2": "Open the <strong>mailbox</strong> (No. 1001) at the 1st floor entrance by aligning the dials.<br>Rotate right twice to <strong>6</strong>, then left once to <strong>3</strong> → pull to open",
+    "step3": "Remove the <strong>keybox</strong> from the mailbox, enter the code and take out the key.<br><span class=\"code-box\">1501</span>",
+    "step4": "Take the elevator to the 10th floor and unlock room <strong>1001</strong> with the key."
+  },
+  "ja": {
+    "keyInfo": "🔑 鍵のご案内",
+    "entryMethod": "🚪 入室方法",
+    "wifi": "📶 Wi-Fi",
+    "password": "パスワード",
+    "address": "📍 住所",
+    "footer": "このページは宿泊者様専用です。URLを第三者に共有しないでください。",
+    "step1": "エントランスの<strong>オートロック</strong>の番号を入力し、<strong>「呼」</strong>ボタンを押してください。<br><span class=\"code-box\">3986</span>",
+    "step2": "エントランス1階の<strong>郵便受け</strong>（1001番）のダイヤルを合わせて開けてください。<br>右へ2回まわして <strong>6</strong>、左へ1回まわして <strong>3</strong> → 引いて開く",
+    "step3": "郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br><span class=\"code-box\">1501</span>",
+    "step4": "エレベーターで10階へ。<strong>1001号室</strong>のドアを鍵で開けてください。"
+  },
+  "zh": {
+    "keyInfo": "🔑 入住信息",
+    "entryMethod": "🚪 进入方式",
+    "wifi": "📶 Wi-Fi",
+    "password": "密码",
+    "address": "📍 地址",
+    "footer": "本页面仅供住客使用。请勿将链接分享给第三方。",
+    "step1": "在入口的<strong>门禁面板</strong>上输入密码，按 <strong>【呼叫】</strong> 按钮。<br><span class=\"code-box\">3986</span>",
+    "step2": "打开1楼入口的<strong>邮箱</strong>（1001号），调整拨盘。<br>向右转两圈到 <strong>6</strong>，再向左转一圈到 <strong>3</strong> → 拉开",
+    "step3": "从邮箱取出<strong>钥匙盒</strong>，输入密码取出钥匙。<br><span class=\"code-box\">1501</span>",
+    "step4": "乘电梯到10楼，用钥匙开 <strong>1001房间</strong> 的门。"
+  },
+  "ko": {
+    "keyInfo": "🔑 체크인 안내",
+    "entryMethod": "🚪 입실 방법",
+    "wifi": "📶 Wi-Fi",
+    "password": "비밀번호",
+    "address": "📍 주소",
+    "footer": "이 페이지는 숙박객 전용입니다. URL을 제3자와 공유하지 마세요.",
+    "step1": "입구 <strong>오토락</strong> 번호를 입력하고 <strong>「呼」</strong> 버튼을 누르세요.<br><span class=\"code-box\">3986</span>",
+    "step2": "1층 입구 <strong>우편함</strong>（1001번）의 다이얼을 맞추어 여세요.<br>오른쪽으로 2번 돌려 <strong>6</strong>，왼쪽으로 1번 돌려 <strong>3</strong> → 당겨 열기",
+    "step3": "우편함 안의 <strong>키박스</strong>를 꺼내 비밀번호를 입력하고 열쇠를 꺼내세요.<br><span class=\"code-box\">1501</span>",
+    "step4": "엘리베이터로 10층에 가서 열쇠로 <strong>1001호</strong> 문을 여세요."
+  },
+  "fr": {
+    "keyInfo": "🔑 Informations",
+    "entryMethod": "🚪 Entrée",
+    "wifi": "📶 Wi-Fi",
+    "password": "Mot de passe",
+    "address": "📍 Adresse",
+    "footer": "Cette page est réservée aux clients. Ne partagez pas l'URL avec des tiers.",
+    "step1": "Entrez le code sur le panneau d'accès à l'entrée et appuyez sur le bouton <strong>\"Appel\" (呼)</strong>.<br><span class=\"code-box\">3986</span>",
+    "step2": "Ouvrez la <strong>boîte aux lettres</strong> (n° 1001) à l'entrée en alignant les molettes.<br>Tournez à droite 2 fois jusqu'à <strong>6</strong>, puis à gauche 1 fois jusqu'à <strong>3</strong> → tirez pour ouvrir",
+    "step3": "Sortez le <strong>boîtier de clés</strong> de la boîte aux lettres, entrez le code et prenez la clé.<br><span class=\"code-box\">1501</span>",
+    "step4": "Montez au 10e étage par l'ascenseur et déverrouillez la chambre <strong>1001</strong>."
+  },
+  "es": {
+    "keyInfo": "🔑 Información",
+    "entryMethod": "🚪 Entrada",
+    "wifi": "📶 Wi-Fi",
+    "password": "Contraseña",
+    "address": "📍 Dirección",
+    "footer": "Esta página es solo para huéspedes. No comparta la URL con terceros.",
+    "step1": "Ingrese el código en el panel de acceso de la entrada y presione el botón <strong>\"Llamar\" (呼)</strong>.<br><span class=\"code-box\">3986</span>",
+    "step2": "Abra el <strong>buzón</strong> (N° 1001) en la entrada del 1er piso alineando los diales.<br>Gire a la derecha 2 veces hasta <strong>6</strong>, luego a la izquierda 1 vez hasta <strong>3</strong> → jale para abrir",
+    "step3": "Saque el <strong>cajón de llaves</strong> del buzón, ingrese el código y tome la llave.<br><span class=\"code-box\">1501</span>",
+    "step4": "Suba al 10° piso en ascensor y abra la habitación <strong>1001</strong> con la llave."
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (I18N[lang] && I18N[lang][key] !== undefined) {
+      el.innerHTML = I18N[lang][key];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    var map = {en:'EN', ja:'日本語', zh:'中文', ko:'한국어', fr:'FR', es:'ES'};
+    btn.classList.toggle('active', btn.textContent === map[lang]);
+  });
+  localStorage.setItem('keys_lang', lang);
+}
+
+(function() {
+  var saved = localStorage.getItem('keys_lang');
+  if (saved && I18N[saved]) setLang(saved);
+})();
+</script>
 </body>
 </html>
