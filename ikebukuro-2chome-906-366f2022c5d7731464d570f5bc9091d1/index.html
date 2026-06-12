@@ -8,18 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   :root {
-    --accent: #c17b7b;
-    --accent-light: #f5e6e6;
-    --cream: #fdf6ee;
-    --text-dark: #3a3232;
-    --text-mid: #6b5a5a;
-    --green: #5a8a6a;
-    --blue: #4a7ab5;
+    --accent: #5ec43a;
+    --accent-light: #d0f5c0;
+    --cream: #f2faf0;
+    --text-dark: #1e3a18;
+    --text-mid: #3a6030;
+    --green: #2a7040;
+    --blue: #267020;
+    --teal: #3db830;
+    --teal-dark: #267020;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); min-height: 100vh; }
   .top-bar {
-    background: linear-gradient(135deg, #c17b7b 0%, #9b5a5a 100%);
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
     padding: 18px 20px 8px;
     text-align: center;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
@@ -31,7 +33,7 @@
     justify-content: center;
     gap: 6px;
     padding: 8px 12px 12px;
-    background: linear-gradient(135deg, #c17b7b 0%, #9b5a5a 100%);
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
     flex-wrap: wrap;
   }
   .lang-btn {
@@ -57,7 +59,7 @@
     border-radius: 16px;
     padding: 18px 18px 16px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 8px rgba(40,100,30,.10);
   }
   .card-title {
     display: flex;
@@ -79,7 +81,7 @@
     align-items: flex-start;
     gap: 12px;
     padding: 10px 0;
-    border-bottom: 1px solid #f5f0eb;
+    border-bottom: 1px solid #e3f3dd;
     font-size: 0.97rem;
     line-height: 1.5;
     font-weight: 600;
@@ -113,7 +115,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid #f5f0eb;
+    border-bottom: 1px solid #e3f3dd;
     font-size: 0.97rem;
     font-weight: 600;
   }
@@ -139,7 +141,7 @@
     <ul class="step-list">
   <li><span class="step-num">1</span><div data-i18n="step1">エントランス1階の<strong>郵便受け</strong>（906番）のダイヤルを合わせて開けてください。<br>左へ2回まわして <strong>5</strong>、右へ1回まわして <strong>7</strong> → 引いて開く</div></li>
   <li><span class="step-num">2</span><div data-i18n="step2">郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br><span class="code-box">9125</span></div></li>
-  <li><span class="step-num">3</span><div data-i18n="step3">オートロックを鍵で開け、エレベーターで9階へ。<strong>906号室</strong>のドアを鍵で開けてください。</div></li>
+  <li><span class="step-num">3</span><div data-i18n="step3">エレベーターで9階へ。<strong>906号室</strong>のドアを鍵で開けてください。</div></li>
 </ul>
   </div>
   <div class="card">
@@ -172,7 +174,7 @@ const I18N = {
     "footer": "This page is for guests only. Do not share the URL with third parties.",
     "step1": "Open the <strong>mailbox</strong> (No. 906) at the 1st floor entrance by aligning the dials.<br>Rotate left twice to <strong>5</strong>, then right once to <strong>7</strong> → pull to open",
     "step2": "Remove the <strong>keybox</strong> from the mailbox, enter the code and take out the key.<br><span class=\"code-box\">9125</span>",
-    "step3": "Unlock the entrance auto-lock with the key, take the elevator to the 9th floor, and unlock room <strong>906</strong>."
+    "step3": "Take the elevator to the 9th floor and unlock room <strong>906</strong> with the key."
   },
   "ja": {
     "keyInfo": "🔑 鍵のご案内",
@@ -183,7 +185,7 @@ const I18N = {
     "footer": "このページは宿泊者様専用です。URLを第三者に共有しないでください。",
     "step1": "エントランス1階の<strong>郵便受け</strong>（906番）のダイヤルを合わせて開けてください。<br>左へ2回まわして <strong>5</strong>、右へ1回まわして <strong>7</strong> → 引いて開く",
     "step2": "郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br><span class=\"code-box\">9125</span>",
-    "step3": "オートロックを鍵で開け、エレベーターで9階へ。<strong>906号室</strong>のドアを鍵で開けてください。"
+    "step3": "エレベーターで9階へ。<strong>906号室</strong>のドアを鍵で開けてください。"
   },
   "zh": {
     "keyInfo": "🔑 入住信息",
@@ -194,7 +196,7 @@ const I18N = {
     "footer": "本页面仅供住客使用。请勿将链接分享给第三方。",
     "step1": "打开1楼入口的<strong>邮箱</strong>（906号），调整拨盘。<br>向左转两圈到 <strong>5</strong>，再向右转一圈到 <strong>7</strong> → 拉开",
     "step2": "从邮箱取出<strong>钥匙盒</strong>，输入密码取出钥匙。<br><span class=\"code-box\">9125</span>",
-    "step3": "用钥匙开门禁，乘电梯到9楼，用钥匙开 <strong>906房间</strong> 的门。"
+    "step3": "乘电梯到9楼，用钥匙开 <strong>906房间</strong> 的门。"
   },
   "ko": {
     "keyInfo": "🔑 체크인 안내",
@@ -205,7 +207,7 @@ const I18N = {
     "footer": "이 페이지는 숙박객 전용입니다. URL을 제3자와 공유하지 마세요.",
     "step1": "1층 입구 <strong>우편함</strong>（906번）의 다이얼을 맞추어 여세요.<br>왼쪽으로 2번 돌려 <strong>5</strong>，오른쪽으로 1번 돌려 <strong>7</strong> → 당겨 열기",
     "step2": "우편함 안의 <strong>키박스</strong>를 꺼내 비밀번호를 입력하고 열쇠를 꺼내세요.<br><span class=\"code-box\">9125</span>",
-    "step3": "열쇠로 오토락 문을 열고 엘리베이터로 9층에 가서 <strong>906호</strong> 문을 여세요."
+    "step3": "엘리베이터로 9층에 가서 열쇠로 <strong>906호</strong> 문을 여세요."
   },
   "fr": {
     "keyInfo": "🔑 Informations",
@@ -216,7 +218,7 @@ const I18N = {
     "footer": "Cette page est réservée aux clients. Ne partagez pas l'URL avec des tiers.",
     "step1": "Ouvrez la <strong>boîte aux lettres</strong> (n° 906) à l'entrée en alignant les molettes.<br>Tournez à gauche 2 fois jusqu'à <strong>5</strong>, puis à droite 1 fois jusqu'à <strong>7</strong> → tirez pour ouvrir",
     "step2": "Sortez le <strong>boîtier de clés</strong> de la boîte aux lettres, entrez le code et prenez la clé.<br><span class=\"code-box\">9125</span>",
-    "step3": "Déverrouillez le verrou automatique avec la clé, montez au 9e étage et déverrouillez la chambre <strong>906</strong>."
+    "step3": "Montez au 9e étage par l'ascenseur et déverrouillez la chambre <strong>906</strong> avec la clé."
   },
   "es": {
     "keyInfo": "🔑 Información",
@@ -227,7 +229,7 @@ const I18N = {
     "footer": "Esta página es solo para huéspedes. No comparta la URL con terceros.",
     "step1": "Abra el <strong>buzón</strong> (N° 906) en la entrada del 1er piso alineando los diales.<br>Gire a la izquierda 2 veces hasta <strong>5</strong>, luego a la derecha 1 vez hasta <strong>7</strong> → jale para abrir",
     "step2": "Saque el <strong>cajón de llaves</strong> del buzón, ingrese el código y tome la llave.<br><span class=\"code-box\">9125</span>",
-    "step3": "Abra el acceso automático con la llave, suba al 9° piso y abra la habitación <strong>906</strong>."
+    "step3": "Suba al 9° piso en ascensor y abra la habitación <strong>906</strong> con la llave."
   }
 };
 
