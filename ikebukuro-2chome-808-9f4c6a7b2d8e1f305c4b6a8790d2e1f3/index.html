@@ -110,6 +110,13 @@
     margin: 6px 0 2px;
     font-family: 'Courier New', monospace;
   }
+  .step-photo {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    margin: 12px 0 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
   .info-row {
     display: flex;
     align-items: center;
@@ -141,9 +148,10 @@
     <ul class="step-list">
   <li><span class="step-num">1</span><div data-i18n="step1">エントランス1階の<strong>郵便受け</strong>（808番）のダイヤルを合わせて開けてください。<br>左へ2回まわして <strong>6</strong>、右へ1回まわして <strong>1</strong> → 引いて開く</div></li>
   <li><span class="step-num">2</span><div data-i18n="step2">郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br><span class="code-box">2525</span></div></li>
-  <li><span class="step-num">3</span><div data-i18n="step3">エントランスの<strong>オートロック</strong>の番号を入力し、<strong>「呼」</strong>ボタンを押してください。<br><span class="code-box">3986</span></div></li>
+  <li><span class="step-num">3</span><div data-i18n="step3">エントランスの<strong>オートロック</strong>は、最初に赤丸の<strong>呼出ボタン</strong>を押してから、<strong>3986</strong>を押してください。<br><span class="code-box">3986</span></div></li>
   <li><span class="step-num">4</span><div data-i18n="step4">エレベーターで8階へ。<strong>808号室</strong>のドアを鍵で開けてください。</div></li>
 </ul>
+    <img class="step-photo" src="autolock-call-button.jpg" alt="赤丸の呼出ボタンを最初に押してから3986を押してください" loading="lazy">
   </div>
   <div class="card">
     <div class="card-title"><span class="icon">📶</span> <span data-i18n="wifi">Wi-Fi</span></div>
@@ -175,7 +183,7 @@ const I18N = {
     "footer": "This page is for guests only. Do not share the URL with third parties.",
     "step1": "Open the <strong>mailbox</strong> (No. 808) at the 1st floor entrance by aligning the dials.<br>Rotate left twice to <strong>6</strong>, then right once to <strong>1</strong> → pull to open",
     "step2": "Remove the <strong>keybox</strong> from the mailbox, enter the code and take out the key.<br><span class=\"code-box\">2525</span>",
-    "step3": "Enter the code on the entrance <strong>auto-lock</strong> panel and press the <strong>\"Call\" (呼)</strong> button.<br><span class=\"code-box\">3986</span>",
+    "step3": "For the entrance <strong>auto-lock</strong>, press the circled <strong>Call</strong> button first, then press <strong>3986</strong>.<br><span class=\"code-box\">3986</span>",
     "step4": "Take the elevator to the 8th floor and unlock room <strong>808</strong> with the key."
   },
   "ja": {
@@ -187,7 +195,7 @@ const I18N = {
     "footer": "このページは宿泊者様専用です。URLを第三者に共有しないでください。",
     "step1": "エントランス1階の<strong>郵便受け</strong>（808番）のダイヤルを合わせて開けてください。<br>左へ2回まわして <strong>6</strong>、右へ1回まわして <strong>1</strong> → 引いて開く",
     "step2": "郵便受けの中の<strong>キーボックス</strong>を取り出し、暗証番号を入力して鍵を取り出してください。<br><span class=\"code-box\">2525</span>",
-    "step3": "エントランスの<strong>オートロック</strong>の番号を入力し、<strong>「呼」</strong>ボタンを押してください。<br><span class=\"code-box\">3986</span>",
+    "step3": "エントランスの<strong>オートロック</strong>は、最初に赤丸の<strong>呼出ボタン</strong>を押してから、<strong>3986</strong>を押してください。<br><span class=\"code-box\">3986</span>",
     "step4": "エレベーターで8階へ。<strong>808号室</strong>のドアを鍵で開けてください。"
   },
   "zh": {
@@ -199,7 +207,7 @@ const I18N = {
     "footer": "本页面仅供住客使用。请勿将链接分享给第三方。",
     "step1": "打开1楼入口的<strong>邮箱</strong>（808号），调整拨盘。<br>向左转两圈到 <strong>6</strong>，再向右转一圈到 <strong>1</strong> → 拉开",
     "step2": "从邮箱取出<strong>钥匙盒</strong>，输入密码取出钥匙。<br><span class=\"code-box\">2525</span>",
-    "step3": "在入口的<strong>门禁面板</strong>上输入密码，按 <strong>【呼叫】</strong> 按钮。<br><span class=\"code-box\">3986</span>",
+    "step3": "入口<strong>门禁</strong>请先按红圈中的<strong>呼叫按钮</strong>，然后按 <strong>3986</strong>。<br><span class=\"code-box\">3986</span>",
     "step4": "乘电梯到8楼，用钥匙开 <strong>808房间</strong> 的门。"
   },
   "ko": {
@@ -211,7 +219,7 @@ const I18N = {
     "footer": "이 페이지는 숙박객 전용입니다. URL을 제3자와 공유하지 마세요.",
     "step1": "1층 입구 <strong>우편함</strong>（808번）의 다이얼을 맞추어 여세요.<br>왼쪽으로 2번 돌려 <strong>6</strong>，오른쪽으로 1번 돌려 <strong>1</strong> → 당겨 열기",
     "step2": "우편함 안의 <strong>키박스</strong>를 꺼내 비밀번호를 입력하고 열쇠를 꺼내세요.<br><span class=\"code-box\">2525</span>",
-    "step3": "입구 <strong>오토락</strong> 번호를 입력하고 <strong>「呼」</strong> 버튼을 누르세요.<br><span class=\"code-box\">3986</span>",
+    "step3": "입구 <strong>오토락</strong>은 먼저 빨간 원의 <strong>호출 버튼</strong>을 누른 후 <strong>3986</strong>을 누르세요.<br><span class=\"code-box\">3986</span>",
     "step4": "엘리베이터로 8층에 가서 열쇠로 <strong>808호</strong> 문을 여세요."
   },
   "fr": {
@@ -223,7 +231,7 @@ const I18N = {
     "footer": "Cette page est réservée aux clients. Ne partagez pas l'URL avec des tiers.",
     "step1": "Ouvrez la <strong>boîte aux lettres</strong> (n° 808) à l'entrée en alignant les molettes.<br>Tournez à gauche 2 fois jusqu'à <strong>6</strong>, puis à droite 1 fois jusqu'à <strong>1</strong> → tirez pour ouvrir",
     "step2": "Sortez le <strong>boîtier de clés</strong> de la boîte aux lettres, entrez le code et prenez la clé.<br><span class=\"code-box\">2525</span>",
-    "step3": "Entrez le code sur le panneau d'accès à l'entrée et appuyez sur le bouton <strong>\"Appel\" (呼)</strong>.<br><span class=\"code-box\">3986</span>",
+    "step3": "Pour l'<strong>auto-lock</strong> de l'entrée, appuyez d'abord sur le bouton <strong>Appel</strong> entouré en rouge, puis appuyez sur <strong>3986</strong>.<br><span class=\"code-box\">3986</span>",
     "step4": "Montez au 8e étage par l'ascenseur et déverrouillez la chambre <strong>808</strong> avec la clé."
   },
   "es": {
@@ -235,7 +243,7 @@ const I18N = {
     "footer": "Esta página es solo para huéspedes. No comparta la URL con terceros.",
     "step1": "Abra el <strong>buzón</strong> (N° 808) en la entrada del 1er piso alineando los diales.<br>Gire a la izquierda 2 veces hasta <strong>6</strong>, luego a la derecha 1 vez hasta <strong>1</strong> → jale para abrir",
     "step2": "Saque el <strong>cajón de llaves</strong> del buzón, ingrese el código y tome la llave.<br><span class=\"code-box\">2525</span>",
-    "step3": "Ingrese el código en el panel de acceso de la entrada y presione el botón <strong>\"Llamar\" (呼)</strong>.<br><span class=\"code-box\">3986</span>",
+    "step3": "Para el <strong>auto-lock</strong> de la entrada, presione primero el botón <strong>Llamar</strong> marcado con el círculo rojo y luego presione <strong>3986</strong>.<br><span class=\"code-box\">3986</span>",
     "step4": "Suba al 8° piso en ascensor y abra la habitación <strong>808</strong> con la llave."
   }
 };
