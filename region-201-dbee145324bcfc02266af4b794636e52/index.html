@@ -38,19 +38,6 @@
   }
   .top-bar .sub { font-size: 0.8rem; color: rgba(255,255,255,0.85); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
   .top-bar h1 { font-family: "Pacifico", cursive; font-size: 1.6rem; color: #fff; text-shadow: 1px 2px 4px rgba(0,0,0,0.2); margin-bottom: 8px; }
-  .top-note {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 12px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.24);
-    color: rgba(255,255,255,0.95);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-  }
   .lang-bar {
     display: flex;
     justify-content: center;
@@ -188,7 +175,6 @@
 <div class="top-bar">
   <div class="sub" data-i18n="keyInfo">🔑 鍵のご案内</div>
   <h1>Region 201</h1>
-  <div class="top-note" data-i18n="guestOnly">Guest Use Only</div>
 </div>
 <div class="lang-bar"><button class="lang-btn" onclick="setLang('en')">EN</button><button class="lang-btn active" onclick="setLang('ja')">日本語</button><button class="lang-btn" onclick="setLang('zh')">中文</button><button class="lang-btn" onclick="setLang('ko')">한국어</button><button class="lang-btn" onclick="setLang('fr')">FR</button><button class="lang-btn" onclick="setLang('es')">ES</button></div>
 <div class="content">
@@ -232,7 +218,6 @@
 const I18N = {
   "en": {
     "keyInfo": "🔑 Key Information",
-    "guestOnly": "Guest Use Only",
     "entryMethod": "🚪 Entry Method",
     "wifi": "📶 Wi-Fi",
     "password": "Password",
@@ -245,7 +230,6 @@ const I18N = {
   },
   "ja": {
     "keyInfo": "🔑 鍵のご案内",
-    "guestOnly": "ご宿泊者さま専用",
     "entryMethod": "🚪 入室方法",
     "wifi": "📶 Wi-Fi",
     "password": "パスワード",
@@ -258,7 +242,6 @@ const I18N = {
   },
   "zh": {
     "keyInfo": "🔑 入住信息",
-    "guestOnly": "仅限住客使用",
     "entryMethod": "🚪 进入方式",
     "wifi": "📶 Wi-Fi",
     "password": "密码",
@@ -271,7 +254,6 @@ const I18N = {
   },
   "ko": {
     "keyInfo": "🔑 체크인 안내",
-    "guestOnly": "투숙객 전용",
     "entryMethod": "🚪 입실 방법",
     "wifi": "📶 Wi-Fi",
     "password": "비밀번호",
@@ -284,7 +266,6 @@ const I18N = {
   },
   "fr": {
     "keyInfo": "🔑 Informations",
-    "guestOnly": "Réservé aux clients",
     "entryMethod": "🚪 Entrée",
     "wifi": "📶 Wi-Fi",
     "password": "Mot de passe",
@@ -297,7 +278,6 @@ const I18N = {
   },
   "es": {
     "keyInfo": "🔑 Información",
-    "guestOnly": "Solo para huéspedes",
     "entryMethod": "🚪 Entrada",
     "wifi": "📶 Wi-Fi",
     "password": "Contraseña",
