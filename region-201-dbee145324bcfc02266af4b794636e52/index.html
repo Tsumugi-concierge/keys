@@ -4,149 +4,361 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Region 201 - Key Information</title>
+<title>Region 201 — 鍵のご案内</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   :root {
-    color-scheme: light;
-    --accent: #a86f5f;
-    --accent-soft: #f3e5df;
-    --bg: #f8f3ee;
-    --card: #ffffff;
-    --text: #2f2b28;
-    --muted: #71645c;
-    --ok: #3f7c62;
-    --line: #eaded6;
+    --accent: #d9467d;
+    --accent-dark: #b83365;
+    --accent-soft: #fdf1f6;
+    --accent-light: #f8d8e6;
+    --cream: #fff8fb;
+    --card: rgba(255,255,255,0.94);
+    --text-dark: #3f2431;
+    --text-mid: #7b5b68;
+    --line: #f3d9e4;
+    --green: #4f8a66;
+    --blue: #4d77bf;
+    --shadow-sm: 0 8px 24px rgba(97, 32, 61, 0.08);
+    --shadow-md: 0 16px 36px rgba(97, 32, 61, 0.12);
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    margin: 0;
+    font-family: "Nunito", sans-serif;
+    background:
+      linear-gradient(180deg, #fff2f7 0%, var(--cream) 180px, var(--cream) 100%);
+    color: var(--text-dark);
     min-height: 100vh;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.6;
   }
-  header {
-    background: var(--accent);
-    color: white;
-    padding: 24px 18px 20px;
+  .top-bar {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    padding: 18px 20px 10px;
     text-align: center;
+    box-shadow: 0 10px 28px rgba(97, 32, 61, 0.18);
   }
-  header p {
-    margin: 0 0 6px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    opacity: .86;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 28px;
-    letter-spacing: .01em;
-  }
-  main {
-    width: min(640px, 100%);
-    margin: 0 auto;
-    padding: 18px 14px 42px;
-  }
-  section {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 18px;
-    margin: 0 0 14px;
-    box-shadow: 0 3px 12px rgba(40, 28, 20, .06);
-  }
-  h2 {
-    margin: 0 0 12px;
-    color: var(--muted);
-    font-size: 14px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-  }
-  ol {
-    margin: 0;
-    padding-left: 22px;
-  }
-  li {
-    margin: 0 0 12px;
-    font-weight: 650;
-  }
-  li:last-child { margin-bottom: 0; }
-  .code {
-    display: inline-block;
-    margin: 6px 0;
-    padding: 6px 14px;
-    border-radius: 8px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 22px;
+  .top-bar .sub { font-size: 0.8rem; color: rgba(255,255,255,0.85); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .top-bar h1 { font-family: "Pacifico", cursive; font-size: 1.6rem; color: #fff; text-shadow: 1px 2px 4px rgba(0,0,0,0.2); margin-bottom: 8px; }
+  .top-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.24);
+    color: rgba(255,255,255,0.95);
+    font-size: 0.76rem;
     font-weight: 800;
-    letter-spacing: .12em;
+    letter-spacing: 0.04em;
   }
-  .row {
+  .lang-bar {
     display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line);
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px 12px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    flex-wrap: wrap;
   }
-  .row:last-child { border-bottom: 0; padding-bottom: 0; }
-  .label {
-    color: var(--muted);
-    font-size: 13px;
+  .lang-btn {
+    background: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.92);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    transition: background 0.15s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: rgba(255,255,255,0.58);
+    color: var(--text-dark);
+    border-color: rgba(255,255,255,0.75);
+  }
+  .content { padding: 22px 16px 48px; max-width: 560px; margin: 0 auto; }
+  .photo-block { margin-bottom: 20px; }
+  .photo-wrap { position: relative; }
+  .photo-frame {
+    background: var(--card);
+    border: 1px solid rgba(217, 70, 125, 0.1);
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+  .photo-wrap img { width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); display: block; }
+  .photo-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(217, 70, 125, 0.18);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 6px 12px 5px;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    box-shadow: 0 8px 20px rgba(63, 36, 49, 0.12);
+  }
+  .photo-caption {
+    margin-top: 10px;
+    padding: 0 4px 2px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-mid);
     font-weight: 700;
   }
-  .value {
-    color: var(--ok);
+  .card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(217, 70, 125, 0.08);
+    backdrop-filter: blur(6px);
+  }
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
     font-weight: 800;
-    text-align: right;
-    overflow-wrap: anywhere;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-soft);
   }
-  .address {
-    font-weight: 750;
+  .card-title .icon {
+    font-size: 1.1rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft);
   }
-  .note {
-    color: var(--muted);
-    font-size: 13px;
+  .step-list { list-style: none; }
+  .step-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8edf2;
+    font-size: 0.97rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .step-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 900;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-shadow: 0 6px 14px rgba(184, 51, 101, 0.22);
+  }
+  .code-box {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 6px 18px;
+    border-radius: 10px;
+    margin: 6px 0 2px;
+    font-family: "Courier New", monospace;
+  }
+  .info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8edf2;
+    font-size: 0.97rem;
+    font-weight: 600;
+    gap: 16px;
+  }
+  .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .info-label { color: var(--text-mid); font-size: 0.85rem; font-weight: 700; }
+  .info-val { font-weight: 800; font-size: 1rem; text-align: right; }
+  .wifi-ssid { color: var(--blue); }
+  .wifi-pass { color: var(--green); }
+  .addr-text { font-size: 0.97rem; font-weight: 700; line-height: 1.7; color: var(--text-dark); }
+  .addr-jp { color: var(--text-mid); font-size: 0.85rem; margin-top: 4px; }
+  .footer {
     text-align: center;
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    padding: 0 10px;
   }
 </style>
 </head>
 <body>
-<header>
-  <p>Key Information</p>
+<div class="top-bar">
+  <div class="sub" data-i18n="keyInfo">🔑 鍵のご案内</div>
   <h1>Region 201</h1>
-</header>
-<main>
-  <section>
-    <h2>Entry</h2>
-    <ol>
-      <li>At the 1st floor auto-lock panel, press the call button and enter <span class="code">5735</span>.</li>
-      <li>Open the 1st floor mailbox. Turn the dial right to <strong>7</strong> twice, then left to <strong>3</strong> once.</li>
-      <li>Take the key from the key box inside the mailbox. Key box code: <span class="code">4822</span></li>
-      <li>Use the key to unlock room 201. When leaving, lock the door and return the key to the key box.</li>
-    </ol>
-  </section>
-  <section>
-    <h2>Wi-Fi</h2>
-    <div class="row">
-      <span class="label">SSID</span>
-      <span class="value">Region Otsuka201</span>
+  <div class="top-note" data-i18n="guestOnly">Guest Use Only</div>
+</div>
+<div class="lang-bar"><button class="lang-btn" onclick="setLang('en')">EN</button><button class="lang-btn active" onclick="setLang('ja')">日本語</button><button class="lang-btn" onclick="setLang('zh')">中文</button><button class="lang-btn" onclick="setLang('ko')">한국어</button><button class="lang-btn" onclick="setLang('fr')">FR</button><button class="lang-btn" onclick="setLang('es')">ES</button></div>
+<div class="content">
+  <div class="photo-block">
+    <div class="photo-frame">
+      <div class="photo-wrap">
+        <img src="../region-701-589ba2d0408d9b44c3d9d03025aba07a/entry.jpg" alt="入室方法">
+        <div class="photo-badge">POST 201</div>
+      </div>
+      <div class="photo-caption" data-i18n="photoCaption">ポストの位置はこの写真をご確認ください。左上の表示は Region 201 用に合わせています。</div>
     </div>
-    <div class="row">
-      <span class="label">Password</span>
-      <span class="value">hello.otsuka</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🚪</span> <span data-i18n="entryMethod">入室方法</span></div>
+    <ul class="step-list">
+      <li><span class="step-num">1</span><div data-i18n="step1">1階入口のオートロックパネルにある <strong>【呼出】</strong> ボタン（右下の大きいボタン）を押してから、<strong>5735</strong> を入力してください。ドアが解錠されます。<br><small style="color:var(--text-mid);font-weight:600;">※オートロックが解錠されている場合はそのままお入りください。</small></div></li>
+      <li><span class="step-num">2</span><div data-i18n="step2">1階のポストを開けます。ダイヤルを <strong>右に【7】を2回</strong>、次に <strong>左に【3】を1回</strong> 回してください。</div></li>
+      <li><span class="step-num">3</span><div data-i18n="step3">ポスト内のキーボックスにコードを入力して鍵を取り出してください。<br><span class="code-box">4822</span></div></li>
+      <li><span class="step-num">4</span><div data-i18n="step4">鍵で201号室のドアを開錠してください。退室時はドアを施錠してキーボックスに鍵を戻してください。</div></li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📶</span> <span data-i18n="wifi">Wi-Fi</span></div>
+    <div class="info-row">
+      <span class="info-label">SSID</span>
+      <span class="info-val wifi-ssid">Region Otsuka201</span>
     </div>
-  </section>
-  <section>
-    <h2>Address</h2>
-    <p class="address">Region Otsuka 201, 3-38-3 Minami-Otsuka, Toshima-ku, Tokyo</p>
-    <p class="address">〒170-0005 東京都豊島区南大塚3-38-3 レジオン大塚201</p>
-  </section>
-  <p class="note">This page is for guests only. Do not share this URL with third parties.</p>
-</main>
+    <div class="info-row">
+      <span class="info-label" data-i18n="password">パスワード</span>
+      <span class="info-val wifi-pass">hello.otsuka</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📍</span> <span data-i18n="address">住所</span></div>
+    <div class="addr-text">Region Otsuka 201, 3-38-3 Minami-Otsuka, Toshima-ku, Tokyo</div>
+    <div class="addr-jp">〒170-0005 東京都豊島区南大塚3-38-3 レジオン大塚201</div>
+  </div>
+  <div class="footer" data-i18n="footer">このページは宿泊者様専用です。URLを第三者に共有しないでください。</div>
+</div>
+
+<script>
+const I18N = {
+  "en": {
+    "keyInfo": "🔑 Key Information",
+    "guestOnly": "Guest Use Only",
+    "entryMethod": "🚪 Entry Method",
+    "wifi": "📶 Wi-Fi",
+    "password": "Password",
+    "address": "📍 Address",
+    "footer": "This page is for guests only. Do not share the URL with third parties.",
+    "photoCaption": "Please use this photo to locate the mailbox area. The label at the top left has been adjusted for Region 201.",
+    "step1": "Press the <strong>[Call]</strong> button (large button at bottom right) on the auto-lock panel at the 1st floor entrance, then enter <strong>5735</strong>. The door will unlock.<br><small style=\"color:var(--text-mid);font-weight:600;\">※ If the door is already unlocked, enter directly.</small>",
+    "step2": "Open the 1st floor mailbox. Turn the dial <strong>right to [7] twice</strong>, then <strong>left to [3] once</strong>.",
+    "step3": "Enter the code on the keybox inside the mailbox and take out the key.<br><span class=\"code-box\">4822</span>",
+    "step4": "Unlock the door of room 201 with the key. When you leave, lock the door and return the key to the keybox."
+  },
+  "ja": {
+    "keyInfo": "🔑 鍵のご案内",
+    "guestOnly": "ご宿泊者さま専用",
+    "entryMethod": "🚪 入室方法",
+    "wifi": "📶 Wi-Fi",
+    "password": "パスワード",
+    "address": "📍 住所",
+    "footer": "このページは宿泊者様専用です。URLを第三者に共有しないでください。",
+    "photoCaption": "ポストの位置はこの写真をご確認ください。左上の表示は Region 201 用に合わせています。",
+    "step1": "1階入口のオートロックパネルにある <strong>【呼出】</strong> ボタン（右下の大きいボタン）を押してから、<strong>5735</strong> を入力してください。ドアが解錠されます。<br><small style=\"color:var(--text-mid);font-weight:600;\">※オートロックが解錠されている場合はそのままお入りください。</small>",
+    "step2": "1階のポストを開けます。ダイヤルを <strong>右に【7】を2回</strong>、次に <strong>左に【3】を1回</strong> 回してください。",
+    "step3": "ポスト内のキーボックスにコードを入力して鍵を取り出してください。<br><span class=\"code-box\">4822</span>",
+    "step4": "鍵で201号室のドアを開錠してください。退室時はドアを施錠してキーボックスに鍵を戻してください。"
+  },
+  "zh": {
+    "keyInfo": "🔑 入住信息",
+    "guestOnly": "仅限住客使用",
+    "entryMethod": "🚪 进入方式",
+    "wifi": "📶 Wi-Fi",
+    "password": "密码",
+    "address": "📍 地址",
+    "footer": "本页面仅供住客使用。请勿将链接分享给第三方。",
+    "photoCaption": "请参考这张照片确认邮箱位置。左上角标识已调整为 Region 201。",
+    "step1": "按1楼入口门禁面板上的<strong>【呼叫】</strong>按钮（右下角大按钮），然后输入 <strong>5735</strong>。门将解锁。<br><small style=\"color:var(--text-mid);font-weight:600;\">※ 如果门禁已解锁，请直接进入。</small>",
+    "step2": "打开1楼邮箱。将拨盘<strong>向右转到【7】两圈</strong>，然后<strong>向左转到【3】一圈</strong>。",
+    "step3": "输入邮箱内钥匙盒的密码，取出钥匙。<br><span class=\"code-box\">4822</span>",
+    "step4": "用钥匙开201室的门。退房时锁门并将钥匙放回钥匙盒。"
+  },
+  "ko": {
+    "keyInfo": "🔑 체크인 안내",
+    "guestOnly": "투숙객 전용",
+    "entryMethod": "🚪 입실 방법",
+    "wifi": "📶 Wi-Fi",
+    "password": "비밀번호",
+    "address": "📍 주소",
+    "footer": "이 페이지는 숙박객 전용입니다. URL을 제3자와 공유하지 마세요.",
+    "photoCaption": "우편함 위치는 이 사진을 확인해 주세요. 왼쪽 상단 표시는 Region 201 기준으로 조정했습니다.",
+    "step1": "1층 입구 오토락 패널의 <strong>【호출】</strong> 버튼（오른쪽 하단의 큰 버튼）을 누른 후 <strong>5735</strong>를 입력하세요. 문이 열립니다.<br><small style=\"color:var(--text-mid);font-weight:600;\">※ 오토락이 이미 해제되어 있으면 그대로 입장하세요.</small>",
+    "step2": "1층 우편함을 여세요. 다이얼을 <strong>오른쪽으로 【7】 2회</strong>，그 다음 <strong>왼쪽으로 【3】 1회</strong> 돌리세요.",
+    "step3": "우편함 안의 키박스에 비밀번호를 입력하고 열쇠를 꺼내세요.<br><span class=\"code-box\">4822</span>",
+    "step4": "열쇠로 201호 문을 열어주세요. 퇴실 시 문을 잠그고 키박스에 열쇠를 반납하세요."
+  },
+  "fr": {
+    "keyInfo": "🔑 Informations",
+    "guestOnly": "Réservé aux clients",
+    "entryMethod": "🚪 Entrée",
+    "wifi": "📶 Wi-Fi",
+    "password": "Mot de passe",
+    "address": "📍 Adresse",
+    "footer": "Cette page est réservée aux clients. Ne partagez pas l'URL avec des tiers.",
+    "photoCaption": "Veuillez utiliser cette photo pour repérer la zone des boîtes aux lettres. L'étiquette en haut à gauche a été ajustée pour Region 201.",
+    "step1": "Appuyez sur le bouton <strong>[Appel]</strong> (grand bouton en bas à droite) du panneau d'accès à l'entrée, puis entrez <strong>5735</strong>. La porte se déverrouillera.<br><small style=\"color:var(--text-mid);font-weight:600;\">※ Si la porte est déjà déverrouillée, entrez directement.</small>",
+    "step2": "Ouvrez la boîte aux lettres du 1er étage. Tournez le cadran <strong>à droite jusqu'à [7] deux fois</strong>, puis <strong>à gauche jusqu'à [3] une fois</strong>.",
+    "step3": "Entrez le code sur le boîtier de clés à l'intérieur de la boîte aux lettres et prenez la clé.<br><span class=\"code-box\">4822</span>",
+    "step4": "Déverrouillez la porte de la chambre 201 avec la clé. À votre départ, verrouillez la porte et remettez la clé dans le boîtier."
+  },
+  "es": {
+    "keyInfo": "🔑 Información",
+    "guestOnly": "Solo para huéspedes",
+    "entryMethod": "🚪 Entrada",
+    "wifi": "📶 Wi-Fi",
+    "password": "Contraseña",
+    "address": "📍 Dirección",
+    "footer": "Esta página es solo para huéspedes. No comparta la URL con terceros.",
+    "photoCaption": "Use esta foto para ubicar el área del buzón. La etiqueta de la parte superior izquierda se ajustó para Region 201.",
+    "step1": "Presione el botón <strong>[Llamar]</strong> (botón grande en la esquina inferior derecha) del panel de acceso, luego ingrese <strong>5735</strong>. La puerta se desbloqueará.<br><small style=\"color:var(--text-mid);font-weight:600;\">※ Si la puerta ya está desbloqueada, entre directamente.</small>",
+    "step2": "Abra el buzón del 1er piso. Gire el dial <strong>a la derecha hasta [7] dos veces</strong>, luego <strong>a la izquierda hasta [3] una vez</strong>.",
+    "step3": "Ingrese el código en el cajón de llaves dentro del buzón y tome la llave.<br><span class=\"code-box\">4822</span>",
+    "step4": "Abra la puerta de la habitación 201 con la llave. Al salir, cierre con llave y devuelva la llave al cajón."
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (I18N[lang] && I18N[lang][key] !== undefined) {
+      el.innerHTML = I18N[lang][key];
+    }
+  });
+  document.querySelectorAll(".lang-btn").forEach(function(btn) {
+    var map = { en: "EN", ja: "日本語", zh: "中文", ko: "한국어", fr: "FR", es: "ES" };
+    btn.classList.toggle("active", btn.textContent === map[lang]);
+  });
+  localStorage.setItem("keys_lang", lang);
+}
+
+(function() {
+  var saved = localStorage.getItem("keys_lang");
+  if (saved && I18N[saved]) setLang(saved);
+})();
+</script>
 </body>
 </html>
