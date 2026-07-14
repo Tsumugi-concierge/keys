@@ -1,116 +1,275 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Key information — Hirai / Maison de cinq</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #f2faf0;
-      --card: #ffffff;
-      --green: #267020;
-      --green-soft: #d5f5ca;
-      --text: #1e3a18;
-      --muted: #3a6030;
-      --warn: #fff7ed;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 28px 16px 48px;
-    }
-    .hero {
-      background: linear-gradient(135deg, #5ec43a, var(--green));
-      color: #fff;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 28px rgba(40,100,30,.18);
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(1.8rem, 6vw, 2.6rem);
-      line-height: 1.15;
-    }
-    .hero p { margin: 0; font-weight: 700; opacity: .94; }
-    .card {
-      margin-top: 18px;
-      background: var(--card);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 4px 18px rgba(40,100,30,.12);
-    }
-    .code {
-      display: inline-block;
-      margin: 8px 0;
-      padding: 10px 16px;
-      border-radius: 14px;
-      background: var(--green-soft);
-      color: var(--green);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-    .important {
-      background: var(--warn);
-      border-left: 5px solid #f59e0b;
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-weight: 700;
-    }
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      margin: 12px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,.10);
-    }
-    ol { padding-left: 1.25rem; }
-    li { margin: 8px 0; }
-    .muted { color: var(--muted); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hirai / Maison de cinq — 鍵のご案内</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #5ec43a;
+    --accent-light: #d0f5c0;
+    --cream: #f2faf0;
+    --text-dark: #1e3a18;
+    --text-mid: #3a6030;
+    --teal: #3db830;
+    --teal-dark: #267020;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--cream); color: var(--text-dark); min-height: 100vh; }
+  body::before, body::after { content: ""; position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(4px); }
+  body::before { top: -120px; right: -100px; width: 360px; height: 360px; background: radial-gradient(circle, #b2e8a0 0%, transparent 68%); }
+  body::after { bottom: -140px; left: -120px; width: 420px; height: 420px; background: radial-gradient(circle, #d5f5ca 0%, transparent 70%); }
+  .page { position: relative; z-index: 1; }
+  .top-bar {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    padding: 18px 20px 8px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .top-bar .sub { font-size: 0.8rem; color: rgba(255,255,255,0.8); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; font-weight: 800; }
+  .top-bar h1 { font-family: 'Pacifico', cursive; font-size: 1.7rem; color: #fff; text-shadow: 1px 2px 4px rgba(0,0,0,0.2); margin-bottom: 8px; font-weight: 400; }
+  .top-bar .property { color: rgba(255,255,255,0.9); font-weight: 800; font-size: .86rem; }
+  .lang-bar {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px 12px;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    flex-wrap: wrap;
+  }
+  .lang-btn {
+    background: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.15s;
+  }
+  .lang-btn.active, .lang-btn:hover { background: rgba(255,255,255,0.55); color: var(--text-dark); border-color: rgba(255,255,255,0.7); }
+  .content { padding: 20px 16px 48px; max-width: 560px; margin: 0 auto; }
+  .card {
+    background: rgba(255,255,255,.9);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(40,100,30,.10);
+  }
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cream);
+  }
+  .card-title .icon { font-size: 1.1rem; }
+  .step-list { list-style: none; }
+  .step-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e3f3dd;
+    font-size: 0.97rem;
+    line-height: 1.55;
+    font-weight: 650;
+  }
+  .step-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num {
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 900;
+    min-width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .code-box {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--teal-dark);
+    font-size: 1.55rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 6px 18px;
+    border-radius: 10px;
+    margin: 6px 0 2px;
+    font-family: 'Courier New', monospace;
+  }
+  .step-photo {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    margin: 12px 0 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
+  .addr-text { font-size: 0.97rem; font-weight: 800; line-height: 1.7; color: var(--text-dark); }
+  .addr-jp { color: var(--text-mid); font-size: 0.85rem; margin-top: 4px; font-weight: 700; }
+  .note { background: #fff7ed; border-left: 5px solid #f59e0b; border-radius: 12px; padding: 12px 14px; font-size: .92rem; font-weight: 800; line-height: 1.55; }
+  .footer { text-align: center; margin-top: 32px; font-size: 0.8rem; color: var(--text-mid); font-weight: 700; }
+</style>
 </head>
 <body>
-<main>
-  <section class="hero">
-    <h1>Key information</h1>
-    <p>Hirai / Maison de cinq 2F・3F</p>
-  </section>
+<div class="page">
+<div class="top-bar">
+  <div class="sub" data-i18n="keyInfo">🔑 鍵のご案内</div>
+  <h1>Hirai</h1>
+  <div class="property">Maison de cinq 2F・3F</div>
+</div>
+<div class="lang-bar">
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
+<div class="content">
+  <div class="card">
+    <div class="card-title"><span class="icon">🚪</span> <span data-i18n="entryMethod">入室方法</span></div>
+    <ul class="step-list">
+      <li><span class="step-num">1</span><div data-i18n="step1">玄関ドアにある<strong>キーボックス</strong>を確認してください。</div></li>
+      <li><span class="step-num">2</span><div data-i18n="step2">キーボックスの暗証番号を入力してください。<br><span class="code-box">9125</span></div></li>
+      <li><span class="step-num">3</span><div data-i18n="step3">キーボックスを開けて鍵を取り出し、玄関ドアを開けてください。</div></li>
+      <li><span class="step-num">4</span><div data-i18n="step4">入室後、キーボックスをしっかり閉めてください。外出時は必ずドアを施錠してください。</div></li>
+    </ul>
+  </div>
 
-  <section class="card">
-    <p class="muted">〒132-0035 東京都江戸川区平井5丁目58-2 Maison de cinq 2・3F</p>
-    <h2>Entrance keybox</h2>
-    <p>The keybox is attached to the entrance door.</p>
-    <p>玄関ドアにキーボックスがあります。</p>
+  <div class="card">
+    <div class="card-title"><span class="icon">📷</span> <span data-i18n="photos">写真</span></div>
+    <img class="step-photo" src="images/keybox-door.webp" alt="Keybox on the entrance door" loading="lazy">
+    <img class="step-photo" src="images/keybox-operation.webp" alt="How to operate the keybox" loading="lazy">
+  </div>
 
-    <div class="important">
-      Keybox code / キーボックス番号<br>
-      <span class="code">9125</span>
-    </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📍</span> <span data-i18n="address">住所</span></div>
+    <div class="addr-text">Maison de cinq 2F・3F, 5-58-2 Hirai, Edogawa-ku, Tokyo 132-0035</div>
+    <div class="addr-jp">〒132-0035 東京都江戸川区平井5丁目58-2 Maison de cinq 2・3F</div>
+  </div>
 
-    <ol>
-      <li>Find the keybox on the entrance door.</li>
-      <li>Set the code to <strong>9125</strong>.</li>
-      <li>Open the keybox and take out the key.</li>
-      <li>After opening the door, close the keybox securely.</li>
-    </ol>
+  <div class="card">
+    <div class="card-title"><span class="icon">⚠️</span> <span data-i18n="noticeTitle">ご注意</span></div>
+    <div class="note" data-i18n="notice">2階・3階を一体でご利用いただく予約です。鍵を紛失しないようご注意ください。</div>
+  </div>
 
-    <p>玄関ドアのキーボックスを開け、鍵を取り出してください。使用後はキーボックスを確実に閉めてください。</p>
+  <div class="footer" data-i18n="footer">このページは宿泊者様専用です。URLを第三者に共有しないでください。</div>
+</div>
+</div>
 
-    <img src="images/keybox-door.webp" alt="Keybox on the entrance door">
-    <img src="images/keybox-operation.webp" alt="How to operate the keybox">
-  </section>
-</main>
+<script>
+const I18N = {
+  en: {
+    keyInfo: "🔑 Key Information",
+    entryMethod: "Entry Method",
+    photos: "Photos",
+    address: "Address",
+    noticeTitle: "Notice",
+    notice: "This reservation uses the 2nd and 3rd floors together. Please be careful not to lose the key.",
+    footer: "This page is for guests only. Do not share the URL with third parties.",
+    step1: "Find the <strong>keybox</strong> attached to the entrance door.",
+    step2: "Enter the keybox code.<br><span class=\"code-box\">9125</span>",
+    step3: "Open the keybox, take out the key, and unlock the entrance door.",
+    step4: "After entering, close the keybox securely. Please always lock the door when going out."
+  },
+  ja: {
+    keyInfo: "🔑 鍵のご案内",
+    entryMethod: "入室方法",
+    photos: "写真",
+    address: "住所",
+    noticeTitle: "ご注意",
+    notice: "2階・3階を一体でご利用いただく予約です。鍵を紛失しないようご注意ください。",
+    footer: "このページは宿泊者様専用です。URLを第三者に共有しないでください。",
+    step1: "玄関ドアにある<strong>キーボックス</strong>を確認してください。",
+    step2: "キーボックスの暗証番号を入力してください。<br><span class=\"code-box\">9125</span>",
+    step3: "キーボックスを開けて鍵を取り出し、玄関ドアを開けてください。",
+    step4: "入室後、キーボックスをしっかり閉めてください。外出時は必ずドアを施錠してください。"
+  },
+  zh: {
+    keyInfo: "🔑 钥匙信息",
+    entryMethod: "进入方法",
+    photos: "照片",
+    address: "地址",
+    noticeTitle: "注意事项",
+    notice: "本预约为2楼和3楼一起使用。请注意不要遗失钥匙。",
+    footer: "本页面仅供住客使用。请勿将链接分享给第三方。",
+    step1: "请找到入口门上的<strong>钥匙盒</strong>。",
+    step2: "请输入钥匙盒密码。<br><span class=\"code-box\">9125</span>",
+    step3: "打开钥匙盒，取出钥匙，然后打开入口门。",
+    step4: "进入后请务必关好钥匙盒。外出时请一定锁门。"
+  },
+  ko: {
+    keyInfo: "🔑 열쇠 안내",
+    entryMethod: "입실 방법",
+    photos: "사진",
+    address: "주소",
+    noticeTitle: "주의사항",
+    notice: "2층과 3층을 함께 이용하는 예약입니다. 열쇠를 잃어버리지 않도록 주의해 주세요.",
+    footer: "이 페이지는 숙박객 전용입니다. URL을 제3자와 공유하지 마세요.",
+    step1: "현관문에 있는 <strong>키박스</strong>를 확인해 주세요.",
+    step2: "키박스 비밀번호를 입력해 주세요.<br><span class=\"code-box\">9125</span>",
+    step3: "키박스를 열고 열쇠를 꺼낸 뒤 현관문을 열어 주세요.",
+    step4: "입실 후 키박스를 확실히 닫아 주세요. 외출 시에는 반드시 문을 잠가 주세요."
+  },
+  fr: {
+    keyInfo: "🔑 Informations clés",
+    entryMethod: "Méthode d’entrée",
+    photos: "Photos",
+    address: "Adresse",
+    noticeTitle: "Remarque",
+    notice: "Cette réservation comprend les 2e et 3e étages ensemble. Veuillez faire attention à ne pas perdre la clé.",
+    footer: "Cette page est réservée aux clients. Ne partagez pas l’URL avec des tiers.",
+    step1: "Repérez le <strong>boîtier à clés</strong> fixé à la porte d’entrée.",
+    step2: "Entrez le code du boîtier à clés.<br><span class=\"code-box\">9125</span>",
+    step3: "Ouvrez le boîtier, prenez la clé, puis ouvrez la porte d’entrée.",
+    step4: "Après être entré, refermez bien le boîtier. Verrouillez toujours la porte lorsque vous sortez."
+  },
+  es: {
+    keyInfo: "🔑 Información de la llave",
+    entryMethod: "Método de entrada",
+    photos: "Fotos",
+    address: "Dirección",
+    noticeTitle: "Aviso",
+    notice: "Esta reserva utiliza el 2.º y 3.º piso juntos. Tenga cuidado de no perder la llave.",
+    footer: "Esta página es solo para huéspedes. No comparta la URL con terceros.",
+    step1: "Busque la <strong>caja de llaves</strong> colocada en la puerta de entrada.",
+    step2: "Introduzca el código de la caja de llaves.<br><span class=\"code-box\">9125</span>",
+    step3: "Abra la caja de llaves, saque la llave y abra la puerta de entrada.",
+    step4: "Después de entrar, cierre bien la caja de llaves. Cierre siempre la puerta con llave al salir."
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (I18N[lang] && I18N[lang][key] !== undefined) {
+      el.innerHTML = I18N[lang][key];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    var map = {en:'EN', ja:'日本語', zh:'中文', ko:'한국어', fr:'FR', es:'ES'};
+    btn.classList.toggle('active', btn.textContent === map[lang]);
+  });
+  localStorage.setItem('keys_lang', lang);
+}
+
+(function() {
+  var saved = localStorage.getItem('keys_lang');
+  if (saved && I18N[saved]) setLang(saved);
+})();
+</script>
 </body>
 </html>
