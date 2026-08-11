@@ -8,15 +8,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   :root {
-    --accent: #5ec43a;
-    --accent-light: #d0f5c0;
-    --cream: #f2faf0;
-    --text-dark: #1e3a18;
-    --text-mid: #3a6030;
-    --green: #2a7040;
-    --blue: #267020;
-    --teal: #3db830;
-    --teal-dark: #267020;
+    --accent: #f0824a;
+    --accent-dark: #b84e10;
+    --accent-light: #fce7d5;
+    --cream: #fdf6ee;
+    --cream-line: #f7ead5;
+    --text-dark: #3a3232;
+    --text-mid: #6b5a5a;
+    --green: #3a6b52;
+    --blue: #d4651e;
+    --teal: #d4651e;
+    --teal-dark: #b84e10;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); min-height: 100vh; }
@@ -59,7 +61,7 @@
     border-radius: 16px;
     padding: 18px 18px 16px;
     margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(40,100,30,.10);
+    box-shadow: 0 2px 8px rgba(120,80,60,.09);
   }
   .card-title {
     display: flex;
@@ -72,7 +74,7 @@
     color: var(--text-mid);
     margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--cream);
+    border-bottom: 2px solid var(--cream-line);
   }
   .card-title .icon { font-size: 1.1rem; }
   .step-list { list-style: none; }
@@ -81,7 +83,7 @@
     align-items: flex-start;
     gap: 12px;
     padding: 10px 0;
-    border-bottom: 1px solid #e3f3dd;
+    border-bottom: 1px solid var(--cream-line);
     font-size: 0.97rem;
     line-height: 1.5;
     font-weight: 600;
@@ -122,7 +124,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid #e3f3dd;
+    border-bottom: 1px solid var(--cream-line);
     font-size: 0.97rem;
     font-weight: 600;
   }
