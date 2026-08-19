@@ -27,9 +27,11 @@
   .lang-btn.active, .lang-btn:hover { background: rgba(255,255,255,0.55); color: var(--text-dark); border-color: rgba(255,255,255,0.7); }
   .content { padding: 28px 18px 60px; max-width: 720px; margin: 0 auto; }
   .photo-block { margin-bottom: 28px; }
-  .photo-stack { display: grid; gap: 18px; }
-  .photo-item img { width: 100%; border-radius: 18px; box-shadow: 0 8px 24px rgba(66,103,95,0.14); display: block; }
-  .photo-caption { margin-top: 8px; font-size: 0.92rem; font-weight: 800; color: var(--text-mid); text-align: center; }
+  .photo-stage { position: relative; }
+  .photo-main { width: 100%; border-radius: 18px; box-shadow: 0 8px 24px rgba(66,103,95,0.14); display: block; }
+  .photo-overlay { position: absolute; right: 12px; bottom: 12px; width: 25%; min-width: 92px; max-width: 150px; background: rgba(255,255,255,0.96); border-radius: 14px; padding: 6px; box-shadow: 0 10px 24px rgba(66,103,95,0.22); }
+  .photo-overlay img { width: 100%; display: block; border-radius: 10px; }
+  .photo-caption { margin-top: 10px; font-size: 0.92rem; font-weight: 800; color: var(--text-mid); text-align: center; }
   .card { background: #fff; border-radius: 18px; padding: 22px 22px 20px; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(66,103,95,0.1); }
   .card-title { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--cream); }
   .card-title .icon { font-size: 1.1rem; }
@@ -57,15 +59,13 @@
 <div class="lang-bar"><button class="lang-btn" onclick="setLang('en')">EN</button><button class="lang-btn active" onclick="setLang('ja')">日本語</button><button class="lang-btn" onclick="setLang('zh')">中文</button><button class="lang-btn" onclick="setLang('ko')">한국어</button><button class="lang-btn" onclick="setLang('fr')">FR</button><button class="lang-btn" onclick="setLang('es')">ES</button></div>
 <div class="content">
   <div class="photo-block">
-    <div class="photo-stack">
-      <div class="photo-item">
-        <img src="entry.jpg" alt="Maison Notle 303 keybox on the door handle">
-      </div>
-      <div class="photo-item">
+    <div class="photo-stage">
+      <img class="photo-main" src="entry.jpg" alt="Maison Notle 303 keybox on the door handle">
+      <div class="photo-overlay">
         <img src="keybox-open.png" alt="Maison Notle 303 keybox open sample">
-        <div class="photo-caption" data-i18n="photoCaption">Open the cover after setting the 4-digit code.</div>
       </div>
     </div>
+    <div class="photo-caption" data-i18n="photoCaption">Open the cover after setting the 4-digit code.</div>
   </div>
   <div class="card">
     <div class="card-title"><span class="icon">🚪</span> <span data-i18n="entryMethod">入室方法</span></div>
