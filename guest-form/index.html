@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Guest registration form</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 36rem; margin: 4rem auto; padding: 0 1.25rem; line-height: 1.6; color: #332b29; }
+    a { display: inline-block; padding: .8rem 1.1rem; border-radius: .7rem; background: #bd6e5e; color: #fff; text-decoration: none; font-weight: 700; }
+    #error { color: #a12622; }
+  </style>
+</head>
+<body>
+  <p id="status">Opening the guest registration form…</p>
+  <p id="fallback" hidden>If it does not open automatically, please use the button below.</p>
+  <p><a id="continue" hidden rel="noreferrer">Open guest registration form</a></p>
+  <p id="error" hidden>This link is incomplete. Please contact the property through your booking message thread.</p>
+  <script>
+    (() => {
+      const parts = location.hash.slice(1).split('/').map(decodeURIComponent);
+      const [formId, bookingId, propertyId, roomId, guestCount] = parts;
+      const valid = /^[A-Za-z0-9]{4,12}$/.test(formId || '') &&
+        /^\d{6,12}$/.test(bookingId || '') &&
+        /^\d{4,12}$/.test(propertyId || '') &&
+        /^\d{4,12}$/.test(roomId || '') &&
+        /^(?:[1-9]|[1-4]\d|50)$/.test(guestCount || '');
+
+      if (!valid) {
+        document.getElementById('status').hidden = true;
+        document.getElementById('error').hidden = false;
+        return;
+      }
+
+      const params = new URLSearchParams({
+        booking_id: bookingId,
+        reservation_id: bookingId,
+        property_id: propertyId,
+        room_id: roomId,
+        guest_count: guestCount,
+        guests: guestCount,
+      });
+      const target = `https://tally.so/r/${formId}?${params.toString()}`;
+      const link = document.getElementById('continue');
+      link.href = target;
+      link.hidden = false;
+      document.getElementById('fallback').hidden = false;
+      location.replace(target);
+    })();
+  </script>
+</body>
+</html>
