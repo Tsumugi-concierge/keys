@@ -21,12 +21,14 @@
   <script>
     (() => {
       const parts = location.hash.slice(1).split('/').map(decodeURIComponent);
-      const [formId, bookingId, propertyId, roomId, guestCount] = parts;
+      const [formId, bookingId, propertyId, roomId, guestCount, checkin, checkout] = parts;
+      const validDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value || '');
       const valid = /^[A-Za-z0-9]{4,12}$/.test(formId || '') &&
         /^\d{6,12}$/.test(bookingId || '') &&
         /^\d{4,12}$/.test(propertyId || '') &&
         /^\d{4,12}$/.test(roomId || '') &&
-        /^(?:[1-9]|[1-4]\d|50)$/.test(guestCount || '');
+        /^(?:[1-9]|[1-4]\d|50)$/.test(guestCount || '') &&
+        (!checkin && !checkout || validDate(checkin) && validDate(checkout));
 
       if (!valid) {
         document.getElementById('status').hidden = true;
@@ -42,6 +44,12 @@
         guest_count: guestCount,
         guests: guestCount,
       });
+      if (checkin && checkout) {
+        params.set('checkin', checkin);
+        params.set('checkout', checkout);
+        params.set('checkin_date', checkin);
+        params.set('checkout_date', checkout);
+      }
       const target = `https://tally.so/r/${formId}?${params.toString()}`;
       const link = document.getElementById('continue');
       link.href = target;
