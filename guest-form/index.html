@@ -21,7 +21,27 @@
   <script>
     (() => {
       const parts = location.hash.slice(1).split('/').map(decodeURIComponent);
-      const [formId, bookingId, propertyId, roomId, guestCount, checkin, checkout] = parts;
+      const [requestedFormId, bookingId, propertyId, roomId, guestCount, checkin, checkout] = parts;
+      // Keep links already sent to guests working after a Tally form migration.
+      // The booking/property/room/count values remain unchanged; only the form ID
+      // is upgraded to the current published form.
+      const migratedFormIds = {
+        '9q6Bg4': 'yXMMXB',
+        'obdgyO': '8NqqNO',
+        'XxR6rg': 'dbEEEq',
+        'D4JdlE': 'laBBBB',
+        'ZjRrze': 'bZqqqo',
+        'BzLaVY': 'Kpzzz7',
+        'lb5A2p': 'J1qqdd',
+        'QK9bjl': 'laBBqW',
+        'yPABG6': 'jeZZbE',
+        'dWGOpD': 'Z988oy',
+        'Y5pEPv': 'e5MMDO',
+        'gDQQR1': 'bZqq9o',
+        'Pde8Qx': 'kbll9M',
+        'EqkWJ2': 'X5LLJ4',
+      };
+      const formId = migratedFormIds[requestedFormId] || requestedFormId;
       const validDate = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value || '');
       const valid = /^[A-Za-z0-9]{4,12}$/.test(formId || '') &&
         /^\d{6,12}$/.test(bookingId || '') &&
